@@ -1,0 +1,49 @@
+.card {
+    background-color: #fff;
+    border: 3px solid #c1c1c1;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    width: 310px;
+    margin: auto;
+    
+  }
+
+  .card:hover {
+    border-color:#4004f6;
+    animation: border-pulse 2s infinite alternate;
+  }
+  
+  @keyframes border-pulse {
+    from {
+      border-color:#4004f6;
+    }
+    to {
+      border-color: #ffffff;
+    }
+  }
+  .close-button {
+    margin-top: 5px;
+    background-color: transparent;
+    background-color: #ff0000;
+    cursor: pointer;
+    margin-left: 20em;
+    border-radius: 5px;
+  }
+  
+  .close-button:hover {
+    color: #ffffff;
+  }
+
+  .img{
+    border-radius: 10px;
+  }
+
+  .h3{
+    color: #5233b0;
+    margin-block-end: -10px;
+    margin-top: -2px;
+  }
+  
+
+  
