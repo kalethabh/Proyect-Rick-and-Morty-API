@@ -6,6 +6,7 @@
     width: 320px;
     width: 310px;
     margin: auto;
+    padding: 10px;
     
   }
 
@@ -16,7 +17,7 @@
   
   @keyframes border-pulse {
     from {
-      border-color:#4004f6;
+      border-color:#ff00ff;
     }
     to {
       border-color: #ffffff;

@@ -1,23 +1,22 @@
 .search-bar {
     display: flex;
-    align-items: center;
     width: 100%;
     max-width: 400px;
-    margin: 0 auto;
+    margin-left: 97rem;
   }
   
   .search-input {
     flex: 1;
     padding: 8px;
-    border: 2px solid #2002ff;
+    border: 2px solid #7802ff;
     border-radius: 4px;
     font-size: 16px;
     outline: none;
   }
   
   .search-button {
-    background-color: #48f100;
-    color: #8d8d8d;
+    background-color: #7802ff;
+    color: #ffffff;
     border: none;
     border-radius: 4px;
     margin-left: 8px;
@@ -27,6 +26,6 @@
   }
   
   .search-button:hover {
-    background-color: #07c9ff;
+    background-color: #00aeff;
   }
   
