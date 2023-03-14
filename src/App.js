@@ -1,34 +1,59 @@
-import './css/App.css'
-import Card from './components/Card.jsx'
-import Cards from './components/Cards.jsx'
-import SearchBar from './components/SearchBar.jsx'
-import characters, { Rick } from './data.js'
+import "./css/App.css";
+import "./components/Nav/Nav.css";
+import Cards from "./components/Cards/Cards.jsx";
+import Nav from "./components/Nav/Nav";
+import About from "./components/About/About";
+import Detail from "./components/Detail/Detail";
+import React, { useState } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+import Form from "./components/Form/Form";
 
-function App () {
+function App() {
+
+  const [characters, setCharacters] = useState([]);
+  const location = useLocation();
+
+  /*  const example = {
+    name: 'Morty Smith',
+    species: 'Human',
+    gender: 'Male',
+    image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
+ }; */
+
+  function onSearch(id) {
+    fetch(`https://rickandmortyapi.com/api/character/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        // data --> {}
+        (
+          data.name
+            ? characters.filter((char) => char.id === data.id).length === 0
+            : ""
+        )
+          ? setCharacters([...characters, data])
+          : alert("Personaje ya existe");
+      });
+  }
+
+  const onClose = (id) => {
+    const filtered = characters.filter((char) => char.id !== Number(id));
+    setCharacters(filtered);
+  };
+  console.log(characters);
   return (
-    <div className='App' style={{ padding: '25px' }}>
-      <div className='search-bar'>
-        <SearchBar
-          onSearch={(characterID) => window.alert(characterID)}
+    <div className="App" style={{ padding: "25px" }}>
+      {location.pathname !== "/" && <Nav onSearch={onSearch} />}
+      <Routes>
+        <Route
+          path="/home"
+          element={<Cards characters={characters} onClose={onClose} />}
         />
-      </div>
-      <div>
-        <Card
-          name={Rick.name}
-          species={Rick.species}
-          gender={Rick.gender}
-          image={Rick.image}
-          onClose={() => window.alert('Emulamos que se cierra la card')}/>
-      </div>
-      <hr />
-      <div>
-        <Cards
-          characters={characters}
-        />
-      </div>
-      <hr />
+        <Route path="/about" element={<About />} />
+        <Route path="/detail/:detailId" element={<Detail />} />
+        <Route path="/" element={<Form/>} />
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

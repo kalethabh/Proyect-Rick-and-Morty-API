@@ -1,5 +1,14 @@
 .App {
    text-align: center;
    background-size: cover;
-   background-image: linear-gradient(to bottom, #00fff7, #02248b);
+   margin-top: 200px;
 }  
+
+.cardsDiv{
+   display: flex;
+   justify-content: space-evenly;
+ }
+
+ .form{
+   margin-top: 100px;
+ }

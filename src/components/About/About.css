@@ -1,0 +1,17 @@
+.text{
+    color: rgb(255, 255, 255);
+    width: 1000px;
+    height: 720px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.295);
+    box-shadow: #2b00ff ;
+    margin-top: 50px;
+    padding: 10px;
+    box-shadow: 0 0 5px #3cff00, 0 0 5px #0cff59, 0 0 10px #00e441, 0 0 5px #0cff41, 0 0 5px #00ff62, 0 0 20px #0cff9e, 0 0 50px #0cff69, 0 0 100px #0cff10;
+    justify-content: center;
+    }
+.div{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
