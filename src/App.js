@@ -4,14 +4,33 @@ import Cards from "./components/Cards/Cards.jsx";
 import Nav from "./components/Nav/Nav";
 import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
-import React, { useState } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Form from "./components/Form/Form";
 
 function App() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [access, setAccess] = useState(false);
+  const username = "kalethabh@gmail.com";
+  const password = "K1043637215";
+
+  function login(userData) {
+    if (userData.password === password && userData.username === username) {
+      setAccess(true);
+      navigate("/home");
+    } 
+  }
+
+  useEffect(() => {
+    !access && navigate('/');
+  }, [access]);
+
+  function logOut() {
+    navigate("/");
+  }
 
   const [characters, setCharacters] = useState([]);
-  const location = useLocation();
 
   /*  const example = {
     name: 'Morty Smith',
@@ -39,10 +58,10 @@ function App() {
     const filtered = characters.filter((char) => char.id !== Number(id));
     setCharacters(filtered);
   };
-  console.log(characters);
+
   return (
     <div className="App" style={{ padding: "25px" }}>
-      {location.pathname !== "/" && <Nav onSearch={onSearch} />}
+      {location.pathname !== "/" && <Nav logout={logOut} onSearch={onSearch} />}
       <Routes>
         <Route
           path="/home"
@@ -50,7 +69,7 @@ function App() {
         />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:detailId" element={<Detail />} />
-        <Route path="/" element={<Form/>} />
+        <Route exact path="/" element={<Form login={login}/>} />
       </Routes>
     </div>
   );

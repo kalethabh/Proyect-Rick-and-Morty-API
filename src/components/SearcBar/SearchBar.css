@@ -2,7 +2,9 @@
     display: flex;
     width: 100%;
     max-width: 400px;
-    margin-left: 86rem;
+    margin-left: 80rem;
+    left: 280px;
+    position: absolute;
   }
   
   .search-input {

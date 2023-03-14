@@ -1,6 +1,8 @@
 .link{
     margin-left: 150px;
     margin-block-end: 10px;
+    position: absolute;
+    left: 50px;
 }
 
 .home{
@@ -49,4 +51,17 @@
     height: 80px;
     box-shadow: 0 0 5px #fefefe, 0 0 20px #f103f5, 0 0 30px #fff, 0 0 10px #00ccff, 0 0 10px #d52dff, 0 0 2px #e100ff, 0 0 5px #b52beb, 0 0 6px #cc00ff;
 }
-  
+.logout{
+    position:absolute;
+    right: 380px;
+    background-color: #7f39d1;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 5px #0c25ff, 0 0 5px #0c25ff, 0 0 10px #002efc, 0 0 5px #0c25ff, 0 0 5px #4c00ff, 0 0 20px #0c25ff, 0 0 50px #0c25ff, 0 0 100px #0c25ff;}
+.logout:hover {
+    background-color: #ff0000;
+}

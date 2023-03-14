@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Form.css'
 import Validation from './Validation'
 
-export default function Form() {
+export default function Form(props) {
 
     const [userData, setUserData] = useState(
       {
@@ -16,30 +16,35 @@ export default function Form() {
           password: ''
       }
     )
-    const handleInputChange = (event)=> {
-      const {name,value} = event.target
+    const handleInputChange = (e)=> {
       setUserData({
         ...userData,
-        [name]: value
+        [e.target.name]: e.target.value
       })
       setErrors(Validation({
         ...userData,
-        [name]: value
+        [e.target.name]: e.target.value
       }))
-      console.log(name,value)
+    }
+    const handleSubmit = (e)=>{
+      e.preventDefault()
+      props.login(userData)
     }
   return (
     <div className='login-form'>
-      
-      <label>Username: </label>
-      <input name="username" placeholder='Escribe tu email...' type='text' onChange={(e)=>handleInputChange(e)}/>
-      <p className='danger'>{errors.username}</p>
+      <form onSubmit={handleSubmit}>
 
-      <label>Password: </label>
-      <input name='password' placeholder='************' type='password' onChange={(e)=>handleInputChange(e)}/>
-      <p className='danger'>{errors.password}</p>
+        <label>Username: </label>
+        <input name="username" value={userData.username} placeholder='Escribe tu email...' type='text' onChange={(e)=>handleInputChange(e)}/>
+        <p className='danger'>{errors.username}</p>
 
-      <button>Login</button>
+        <label>Password: </label>
+        <input name='password' value={userData.password} placeholder='**********' type='password' onChange={(e)=>handleInputChange(e)}/>
+        <p className='danger'>{errors.password}</p>
+
+        <button type='submit' >Login</button>
+
+      </form>
 
     </div>
   )

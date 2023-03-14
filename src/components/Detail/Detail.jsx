@@ -31,7 +31,6 @@ const Detail = () => {
        <button className='back'onClick={() => navigate(-1)}>Volver</button>
       <div className='detail'>
           <h1>Name: {character.name}</h1>
-          <h1>Status: {character.status}</h1>
           <h1>Gender: {character.gender}</h1>
           <h1>Specie: {character.species}</h1>
           <h1>Status: {character.status}</h1>

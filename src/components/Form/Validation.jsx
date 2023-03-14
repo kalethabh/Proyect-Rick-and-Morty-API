@@ -1,7 +1,9 @@
-function Validation(userData){
+function Validation(userData){ 
+
   const errors = {}
   const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-  const regexPassword = /.*\d+.*/;
+  const regexPasswordNumber = /.*\d+.*/;
+  const regexPassword = /^[a-zA-Z0-9]{6,10}$/;
 
   if(!regexEmail.test(userData.username)){
     errors.username = "Digite un email válido!"
@@ -12,10 +14,10 @@ function Validation(userData){
   if(userData.username.lenght > 35){
     errors.username = "No puede tener más de 35 caracteres!"
   }
-  if(!regexPassword.test(userData.password)){
+  if(!regexPasswordNumber.test(userData.password)){
     errors.password = "Debe tener al menos un numero!"
   }
-  if(userData.password.lenght < 6 || userData.password.lenght > 10){
+  if(regexPassword.test(userData.password)){
     errors.password = "Debbe tener entre  6 y 10 caracteres!"
   }
 

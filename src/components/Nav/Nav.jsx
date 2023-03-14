@@ -1,11 +1,20 @@
 import React from 'react'
 import './Nav.css'
 import SearchBar from '../SearcBar/SearchBar'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Nav(props) {
+  const navigate = useNavigate()
+  
+  const handleLogOut = ()=>{
+      navigate("/")
+    }
+
   return (
-    <div className='div'>
+    <div className='div' >
+        <button onClick={handleLogOut} className='logout' >
+          Logout
+        </button> 
       <div className='link'>
         <Link className='home' to="/home">
           <button className='button'>
