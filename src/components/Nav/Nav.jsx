@@ -13,9 +13,9 @@ function Nav(props) {
   return (
     <div className='div' >
         <button onClick={handleLogOut} className='logout' >
-          Logout
+          LogOut
         </button> 
-      <div className='link'>
+      <div>
         <Link className='home' to="/home">
           <button className='button'>
             Home

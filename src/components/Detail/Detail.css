@@ -15,6 +15,9 @@
     }
     .detailDiv{
       padding: 10px;
+      position: fixed;
+      top: 170px;
+      left: 25em;
     }
     .imgs{
         border-radius: 20px;
@@ -23,12 +26,14 @@
         box-shadow: 0 0 5px #0c24ffa9, 0 0 5px #0c24ff9c, 0 0 10px #002efca6, 0 0 5px #0c24ffa1, 0 0 5px #4c00ffc0, 0 0 20px #0c24ff9f, 0 0 50px #0c25ff, 0 0 100px #0c24ffa1;
     }
     .back {
+      position:fixed;
+      top: 130px;
+      right: 50px;
       background-color: #ff00ff;
       color: #ffffff;
       border: none;
       margin-top: 30px;
       border-radius: 20px;
-      margin-left: 110em;
       padding: 5px 13px;
       font-size: 16px;
       cursor: pointer;
