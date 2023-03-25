@@ -10,13 +10,15 @@
   margin-top: 100px;
   padding: 10px;
   background-size: cover;
-  }
-  card-container{
-    flex-wrap: wrap;
-  }
-  .cardsDiv{
+  flex-wrap: wrap;
+}
+.cardsDiv{
+    margin: auto;
+    justify-content: space-between;
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: calc(50.50% + 200px);
+    margin-bottom: 40px;
   }
 
   .card:hover {
@@ -74,7 +76,8 @@
     font-weight: bold;
   }
   .p1{
-    margin-top: -9px;
+    margin-top: 10em;
+    margin-left: -7.5em;
     font-weight: bold;
   }
   

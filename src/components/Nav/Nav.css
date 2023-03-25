@@ -1,11 +1,11 @@
 .home{
     top: 60px;
-    position: fixed;
     color: rgb(196, 240, 2) ;
     background-color: #c500bbb1;
     box-shadow: 0 0 5px #fefefe, 0 0 20px #f103f5, 0 0 30px #fff, 0 0 10px #00ccff, 0 0 10px #d52dff, 0 0 2px #e100ff, 0 0 5px #b52beb, 0 0 6px #cc00ff;
     border: none;
     left: 50px;
+    position: absolute;
 }
 
 .home:hover {
@@ -14,8 +14,8 @@
 }
 
 .about{
+    position: absolute;
     top: 60px;
-    position: fixed;
     left: 130px;
     color:  rgb(196, 240, 2);
     border: none;
@@ -46,7 +46,7 @@
     box-shadow: 0 0 5px #fefefe, 0 0 20px #f103f5, 0 0 30px #fff, 0 0 10px #00ccff, 0 0 10px #d52dff, 0 0 2px #e100ff, 0 0 5px #b52beb, 0 0 6px #cc00ff;
 }
 .logout{
-    position:fixed;
+    position: absolute  ;
     right: 381px;
     background-color: #7f39d1;
     color: #ffffff;

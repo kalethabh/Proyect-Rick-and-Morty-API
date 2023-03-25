@@ -5,7 +5,6 @@ export default function Cards(props) {
 
    const {characters} = props
    return( 
-      
      <div className='cardsDiv'>
          {characters.map(({ id, name, species, image, gender}) => 
             <div>

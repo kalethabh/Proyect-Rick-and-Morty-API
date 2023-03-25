@@ -13,7 +13,7 @@ function Nav(props) {
   return (
     <div className='div' >
         <button onClick={handleLogOut} className='logout' >
-          LogOut
+          Log Out
         </button> 
       <div>
         <Link className='home' to="/home">
