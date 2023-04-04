@@ -26,6 +26,11 @@ function Nav(props) {
           About
         </button>  
         </Link>
+        <Link className='Favorites' to="/favorites">
+        <button className='button'>
+          Favorites
+        </button>  
+        </Link>
       </div>
       <div className='search-bar'>
           <SearchBar onSearch={(props.onSearch)}/>
