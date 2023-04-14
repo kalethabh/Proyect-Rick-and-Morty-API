@@ -1,0 +1,46 @@
+
+.detail {
+    flex-direction: column;
+    width: 800px;
+    height: 450px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.295);
+    transition: all 0.3s ease;
+    box-shadow: #2b00ff ;
+    margin-top: 100px;
+    padding: 10px;
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 10px #00ccff, 0 0 40px #d52dff, 0 0 50px #e100ff, 0 0 70px #b52beb, 0 0 120px #cc00ff;
+    color: #000000;
+    margin: auto;
+    }
+    .detailDiv{
+      padding: 10px;
+      position: fixed;
+      top: 170px;
+      left: 25em;
+    }
+    .imgs{
+        border-radius: 20px;
+        width: 330px;
+        height: 280px;
+        box-shadow: 0 0 5px #0c24ffa9, 0 0 5px #0c24ff9c, 0 0 10px #002efca6, 0 0 5px #0c24ffa1, 0 0 5px #4c00ffc0, 0 0 20px #0c24ff9f, 0 0 50px #0c25ff, 0 0 100px #0c24ffa1;
+    }
+    .back {
+      position:fixed;
+      top: 130px;
+      right: 50px;
+      background-color: #ff00ff;
+      color: #ffffff;
+      border: none;
+      margin-top: 30px;
+      border-radius: 20px;
+      padding: 5px 13px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #f31f94, 0 0 20px #cc09c2, 0 0 30px #f504cd, 0 0 10px #ff00ea, 0 0 40px #d52dff, 0 0 50px #e100ff, 0 0 70px #b52beb, 0 0 120px #cc00ff;
+    }
+    
+    .back:hover {
+      background-color: #3700ff65;
+    }
+    
