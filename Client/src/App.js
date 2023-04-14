@@ -7,7 +7,7 @@ import Detail from "./components/Detail/Detail";
 import React, { useState, useEffect } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Form from "./components/Form/Form";
-import Favorites from "./components/Favorites/Favorites"
+import Favorites from "./components/Favorites/Favorites";
 
 function App() {
   const location = useLocation();
@@ -20,11 +20,11 @@ function App() {
     if (userData.password === password && userData.username === username) {
       setAccess(true);
       navigate("/home");
-    } 
+    }
   }
 
   useEffect(() => {
-    !access && navigate('/');
+    !access && navigate("/");
   }, [access]);
 
   function logOut() {
@@ -40,20 +40,22 @@ function App() {
     image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
  }; */
 
-  function onSearch(id) {
-    fetch(`https://rickandmortyapi.com/api/character/${id}`)
-      .then((response) => response.json())
+  const onSearch = (id) => {
+    fetch(`http://localhost:3001/rickandmorty/character/${id}`)
+      .then((res) => res.json())
       .then((data) => {
         // data --> {}
-        (
-          data.name
-            ? characters.filter((char) => char.id === data.id).length === 0
-            : ""
-        )
-          ? setCharacters([...characters, data])
-          : alert("Personaje ya existe");
-      });
-  }
+        const { id } = data;
+        const char = characters.find((char) => char.id === id);
+        if (id) {
+          if (char) return alert("Personaje ya existe");
+          setCharacters([...characters, data]);
+        } else {
+          alert(data.error);
+        }
+      })
+      .catch((error) => console.log(error));
+  };
 
   const onClose = (id) => {
     const filtered = characters.filter((char) => char.id !== Number(id));
